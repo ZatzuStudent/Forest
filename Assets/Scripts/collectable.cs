@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class collectable : MonoBehaviour
+public class Collectable : MonoBehaviour
 {
     public CollectableType type;
+    public Sprite icon;
 
     public string targetTag = "Player";
     public float followRange = 10f;
@@ -37,7 +38,7 @@ public class collectable : MonoBehaviour
 
         if (player)
         {
-            player.inventory.Add(type);
+            player.inventory.Add(this);
             Destroy(this.gameObject);
         }
     }

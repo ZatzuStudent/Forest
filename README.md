@@ -3,23 +3,27 @@
 Finally learned how to add to repo!
 
 Completed:
+
 -walking
 -Camera follow
 -Tilemaps
 -enemy kill
 -Dialog
 -Dash
+-Inventory
+-Collect items
 
-Incompleted:
+
+Incomplete: 
+
 -Story
    >Dialog Choices
 
 -Player
    >Health
    >Death
-   >Inventory
    >Skill
-   >Collect items
+   >
 
 -World
    >better map

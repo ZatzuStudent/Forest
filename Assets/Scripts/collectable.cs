@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class collectable : MonoBehaviour
 {
-    // player walks into item
-    //add items to player
-    //delete item
+    public CollectableType type;
 
     public string targetTag = "Player";
     public float followRange = 10f;
@@ -39,8 +37,13 @@ public class collectable : MonoBehaviour
 
         if (player)
         {
-            player.numBerries++;
+            player.inventory.Add(type);
             Destroy(this.gameObject);
         }
     }
+}
+
+public enum CollectableType
+{
+    NONE, BERRIES
 }

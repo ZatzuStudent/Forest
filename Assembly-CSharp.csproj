@@ -41,6 +41,7 @@
      <Compile Include="Assets\BerryPick.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\PlayerHealth.cs" />
+     <Compile Include="Assets\Scripts\Florance.cs" />
      <Compile Include="Assets\Scripts\DialogTrigger.cs" />
      <Compile Include="Assets\Scripts\LetterScript.cs" />
      <Compile Include="Assets\Scripts\enemy.cs" />
@@ -50,8 +51,8 @@
      <Compile Include="Assets\Scripts\Character.cs" />
      <Compile Include="Assets\TrialScript.cs" />
      <Compile Include="Assets\EnemyDmg.cs" />
-     <Compile Include="Assets\EforFlora.cs" />
      <Compile Include="Assets\Inventory.cs" />
+     <Compile Include="Assets\EforFlora.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

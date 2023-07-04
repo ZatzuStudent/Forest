@@ -27,9 +27,12 @@ private void OnTriggerEnter2D(Collider2D other)
     }
 }
 
-private void UpdateBerryCountText()
+public void UpdateBerryCountText()
     {
         berryCountText.text = "" + berryCount.ToString();
     }
+
+
+
     
 }

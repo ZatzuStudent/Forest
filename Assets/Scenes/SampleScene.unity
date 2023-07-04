@@ -59574,7 +59574,8 @@ PrefabInstance:
       propertyPath: targetObject
       value: 
       objectReference: {fileID: 556416323}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 327986412421258757, guid: 88e1b2e6c0bcd20478c068bd2ed112fd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 88e1b2e6c0bcd20478c068bd2ed112fd, type: 3}
 --- !u!1 &1275465511 stripped
 GameObject:
@@ -60529,6 +60530,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1478481758}
   m_CullTransparentMesh: 1
+--- !u!1 &1490925705 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 327986412421258752, guid: 88e1b2e6c0bcd20478c068bd2ed112fd, type: 3}
+  m_PrefabInstance: {fileID: 1233226294}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1490925707 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 327986412421258756, guid: 88e1b2e6c0bcd20478c068bd2ed112fd, type: 3}
+  m_PrefabInstance: {fileID: 1233226294}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490925705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8feb3ab242f7e143b5f4f941b6100ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1490925713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490925705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b2c2abcf90e3a44a0e61347c457369, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionRange: 2
+  trigger: {fileID: 1490925707}
+  LetterE: {fileID: 556416323}
+  berriesRequired: 5
 --- !u!1 &1500940976
 GameObject:
   m_ObjectHideFlags: 0
@@ -62770,8 +62803,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -228.70892, y: -130.25311}
-  m_SizeDelta: {x: 178.2075, y: 77.239}
+  m_AnchoredPosition: {x: -286.74927, y: -131.33798}
+  m_SizeDelta: {x: 62.1268, y: 79.4087}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2135736548
 MonoBehaviour:

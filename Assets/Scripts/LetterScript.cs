@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LetterScript : MonoBehaviour
 {
-    private Renderer renderer;
+    private Renderer renderered;
 
     public float farDistance = 2f;  // Define the threshold for "far" distance
 
@@ -12,7 +12,7 @@ public class LetterScript : MonoBehaviour
 
     private void Awake()
     {
-        renderer = GetComponent<Renderer>();
+        renderered = GetComponent<Renderer>();
         playerObject = GameObject.FindGameObjectWithTag("Player"); // Find the player object by tag
     }
     private void Update()
@@ -23,11 +23,11 @@ public class LetterScript : MonoBehaviour
         // Check if the distance is greater than the farDistance
         if (distance > farDistance)
         {
-            renderer.enabled = false;
+            renderered.enabled = false;
         }
         else
         {
-            renderer.enabled = true;
+            renderered.enabled = true;
         }
     }
 }

@@ -4,44 +4,40 @@ using UnityEngine;
 
 public class Objects : MonoBehaviour
 {
-    private Transform playerTransform; // Changed to private since it will be assigned automatically
-    private Collider2D myCollider;
-    private Renderer myRenderer;
+    public string loveTagName = "Player";
+    public int belowSortingOrder = 0;
+    public int aboveSortingOrder = 5;
 
-    private void Start()
+    private Collider2D objectCollider;
+    private Transform loveObject;
+
+    private SpriteRenderer spriteRenderer;
+
+    private void Awake()
     {
-        // Get the Collider2D and Renderer components attached to the object
-        myCollider = GetComponent<Collider2D>();
-        myRenderer = GetComponent<Renderer>();
+        // Get the collider attached to the object
+        objectCollider = GetComponent<Collider2D>();
 
-        // Find the player object based on the "Player" tag
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null)
-        {
-            playerTransform = player.transform;
-        }
-        else
-        {
-            Debug.LogError("Player object not found! Make sure to assign the 'Player' tag to the player object.");
-        }
+        // Find the object with the "Love" tag
+        loveObject = GameObject.FindGameObjectWithTag(loveTagName).transform;
+
+        // Get the SpriteRenderer component attached to the object
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
     {
-        // Check if the playerTransform is valid before accessing its collider
-        if (playerTransform != null)
+        if (loveObject == null)
         {
-            // Check if the Y position of the object's collider is higher than the player's collider
-            if (myCollider.bounds.max.y < playerTransform.GetComponent<Collider2D>().bounds.max.y)
-            {
-                // Set the sorting order to 5
-                myRenderer.sortingOrder = 5;
-            }
-            else
-            {
-                // Reset the sorting order to default (0)
-                myRenderer.sortingOrder = 0;
-            }
+            Debug.LogWarning("No object with the tag 'Love' found.");
+            return;
         }
+
+        // Check if the love object is below the collider
+        bool isBelow = loveObject.position.y < objectCollider.bounds.center.y;
+
+        // Set the sorting order based on the result
+        int sortingOrder = isBelow ? belowSortingOrder : aboveSortingOrder;
+        spriteRenderer.sortingOrder = sortingOrder;
     }
 }

@@ -6,25 +6,25 @@ public class Flora : MonoBehaviour
 {
     public float interactionRange = 2f;
     public DialogTrigger trigger;
-    public GameObject targetObject;
+    public GameObject LetterE;
 
     void Update()
     {
         // Check if the player is within range and has pressed the "E" key
-        if (Input.GetKeyDown(KeyCode.E) && (targetObject.activeSelf))
+        if (Input.GetKeyDown(KeyCode.E) && (LetterE.activeSelf))
         {
             // Trigger the interaction
             trigger.StartDialog();
-            targetObject.SetActive(false);
+            LetterE.SetActive(false);
         }
 
         if (IsPlayerInRange())
         {
-            targetObject.SetActive(true);
+            LetterE.SetActive(true);
         }
         else
         {
-            targetObject.SetActive(false);
+            LetterE.SetActive(false);
         }
     }
 

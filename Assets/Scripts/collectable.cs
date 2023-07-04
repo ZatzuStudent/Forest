@@ -15,6 +15,7 @@ public class Collectable : MonoBehaviour
 
     private void Start()
     {
+        
         targetObject = GameObject.FindGameObjectWithTag(targetTag);
     }
 

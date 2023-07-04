@@ -8,28 +8,12 @@ public class Inventory_UI : MonoBehaviour
     public Player player;
     public List<Slots_UI> slots = new List<Slots_UI>();
     void Update(){
-    if(Input.GetKeyDown(KeyCode.Tab))
-    {
-        ToggleInventory();
-    }
+
     }
 
     public void Start()
     {
-        InventoryBox.SetActive(false);
-    }
-
-    public void ToggleInventory()
-    {
-        if(!InventoryBox.activeSelf)
-        {
-            InventoryBox.SetActive(true);
-            Setup();
-        }
-        else
-        {
-            InventoryBox.SetActive(false);
-        }
+        InventoryBox.SetActive(true);
     }
 
     void Setup()

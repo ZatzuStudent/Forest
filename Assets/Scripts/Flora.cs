@@ -11,7 +11,7 @@ public class Flora : MonoBehaviour
     void Update()
     {
         // Check if the player is within range and has pressed the "E" key
-        if (Input.GetKeyDown(KeyCode.E) && (LetterE.activeSelf))
+        if (Input.GetKeyDown(KeyCode.E) && IsPlayerInRange())
         {
             // Trigger the interaction
             trigger.StartDialog();

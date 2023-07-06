@@ -6,9 +6,12 @@ public class Florance : MonoBehaviour
 {
     public float interactionRange = 2f;
     public DialogTrigger trigger;
+    public DialogTrigger triggerTwo;
+    public DialogTrigger triggerThree;
     public GameObject LetterE;
     private Inventory inventoryBerry;
     private bool hasInteracted = false;
+    private bool isFull = false;
     public int berriesRequired = 5;
 
     private void Start()
@@ -18,13 +21,23 @@ public class Florance : MonoBehaviour
 
     void Update()
     {
-        if (hasInteracted)
+        if (hasInteracted && !isFull)
         {
             if (Input.GetKeyDown(KeyCode.E) && IsPlayerInRange())
             {
                 BerryGive();
             }
+            return;
         }
+
+            if (isFull)
+        {
+            if (Input.GetKeyDown(KeyCode.E) && IsPlayerInRange())
+            {
+                HeThanks();
+            }
+        }
+
         else
         {
             if (Input.GetKeyDown(KeyCode.E) && IsPlayerInRange())
@@ -78,9 +91,32 @@ public class Florance : MonoBehaviour
             {
                 inventoryBerry.berryCount -= berriesRequired;
                 inventoryBerry.UpdateBerryCountText();
+                triggerTwo.StartDialog();
                 Debug.Log("NPC: Thank you for the berries!");
-                hasInteracted = true;
+                isFull = true;
             }
+            else{
+                TalkTo();
+            }
+    }
+
+        void HeThanks()
+    {   
+        {
+            triggerThree.StartDialog();
+            LetterE.SetActive(false);
+            hasInteracted = true;
+
+        }
+
+        if (IsPlayerInRange())
+        {
+            LetterE.SetActive(true);
+        }
+        else
+        {
+            LetterE.SetActive(false);
+        }
     }
 
 }

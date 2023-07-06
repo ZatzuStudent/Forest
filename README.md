@@ -1,6 +1,6 @@
 "# MaskedElf" 
 
-Finally learned how to add to repo!
+End of current game dev. Uploaded in itch.io
 
 Completed:
 
@@ -12,19 +12,12 @@ Completed:
 -Dash
 -Inventory
 -Collect items
-
+-better map
 
 Incomplete: 
 
 -Story
-   >Dialog Choices
+   >-Dialog Choices-
 
 -Player
-   >Health
-   >Death
-   >Skill
-   >
-
--World
-   >better map
-   >
+   >-Skill-

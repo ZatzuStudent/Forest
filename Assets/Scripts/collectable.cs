@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Collectable : MonoBehaviour
 {
-    public Sprite icon;
-
     public string targetTag = "Player";
     public float followRange = 10f;
     public float moveSpeed = 5f;

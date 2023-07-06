@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public ContactFilter2D movementFilter;
     public Vector2 lastMotionVector;
     public bool isMoving;
+    public AudioSource slash;
+    public AudioSource dash;
 
     private float activeMoveSpeed;
     public float dashSpeed;
@@ -23,20 +25,31 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
-    bool canMove = true;
+    bool canMove = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(WaitBeforeMove(11f));
+
         activeMoveSpeed = moveSpeed;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         trailRenderer = GetComponent<TrailRenderer>();
     }
 
+        private IEnumerator WaitBeforeMove(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        
+        // Enable movement after the wait time has passed
+        canMove = true;
+    }
+
     // Moves player
     private void FixedUpdate()
     {
+
         if(DialogManager.isActive == true)
         return;
 
@@ -110,12 +123,13 @@ public class PlayerController : MonoBehaviour
 
 
         // DASH
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && canMove)
         {
             if (dashCoolCounter <= 0 && dashCounter <=0)
             {
                 activeMoveSpeed = dashSpeed;
                 dashCounter = dashLength;
+                dash.Play();
                 trailRenderer.emitting = true;
             }
         }
@@ -150,6 +164,9 @@ public class PlayerController : MonoBehaviour
         if(DialogManager.isActive == true)
         return;
         animator.SetTrigger("swordAttack");
+            if(canMove)
+            slash.Play();
+       
     }
 
     public void LockMovement(){
